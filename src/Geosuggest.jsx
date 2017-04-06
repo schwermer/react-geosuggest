@@ -240,6 +240,7 @@ class Geosuggest extends React.Component {
       if (!skipSuggest(suggest)) {
         suggests.push({
           label: this.props.getSuggestLabel(suggest),
+          description: suggest.description,
           placeId: suggest.place_id,
           isFixture: false
         });
@@ -339,7 +340,7 @@ class Geosuggest extends React.Component {
 
     this.setState({
       isSuggestsHidden: true,
-      userInput: suggest.label
+      userInput: suggest.description
     });
 
     if (suggest.location) {
